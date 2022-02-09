@@ -2,7 +2,7 @@
 
 echo "START validate_service"
 
-sleep 10
-nc -zv 127.0.0.1 3000
+forever stopall
+forever start /home/ec2-user/nodejs/app.js
 
 echo "END validate_service"
