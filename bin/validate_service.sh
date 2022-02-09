@@ -2,7 +2,6 @@
 
 echo "START validate_service"
 
-forever stopall
-forever start /home/ec2-user/nodejs/app.js
+forever start /home/ec2-user/app/app.js
 
 echo "END validate_service"
