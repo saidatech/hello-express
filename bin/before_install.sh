@@ -3,14 +3,17 @@ set -e
 
 echo "START before_install"
 
-yum -y update
+# Install node.js
+sudo yum install -y gcc-c++ make 
+curl -sL https://rpm.nodesource.com/setup_14.x | sudo -E bash -
+sudo yum update
+sudo yum install -y nodejs
 
-yum -y install nc
+# Install nodemon
+# sudo npm install nodemon -g
 
-curl –sL https://rpm.nodesource.com/setup_12.x | sudo bash -
-yum -y install nodejs
-
-npm install -g pm2
-pm2 update
+# Install forever module 
+# https://www.npmjs.com/package/forever
+sudo npm install forever -g
 
 echo "END before_install"
